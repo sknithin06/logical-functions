@@ -25,6 +25,12 @@ public class logFunc {
 		System.out.format("root2 = %.2f-%.2fi",real,imaginary);
 	}	
 	}
+	static void distance(double x1, double x2 , double y1, double y2) {
+		double p = 2;
+		double y = Math.pow((x2 - x1),p) + Math.pow((y2- y1),p);
+		System.out.println(Math.sqrt(y));
+		System.out.println("The distance between the 2 points is :"+y);			
+	}
 	public static void main(String[] args) {
 		System.out.println("Welcome to Logical Function Program ");
 		
@@ -36,5 +42,15 @@ public class logFunc {
 		System.out.print("Enter third number:");  
 		int c = sc.nextInt();
 		calculateRoots(a, b, c);
+		
+		System.out.print("Enter first number- ");  
+		double x1=sc.nextDouble();  
+		System.out.print("Enter second number- ");  
+		double x2=sc.nextDouble();  
+		System.out.print("Enter third number- ");  
+		double y1= sc.nextDouble();  
+		System.out.print("enter fourth number-");
+		double y2= sc.nextDouble();
+		distance(x1, x2, y1, y2);
 	}
 }
