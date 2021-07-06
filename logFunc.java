@@ -31,6 +31,22 @@ public class logFunc {
 		System.out.println(Math.sqrt(y));
 		System.out.println("The distance between the 2 points is :"+y);			
 	}
+	static void findTriplets(int[] array, int n) {
+		for (int i = 0; i < n-2; i++) {
+			for (int j = i + 1; j < n-2; j++) {
+				for (int k = j + 1; k < n; k++) {
+					if (array[i] + array[j] + array[k] == 0) {
+						System.out.print(array[i]);
+						System.out.print(" ");
+						System.out.print(array[j]);
+						System.out.print(" "); 
+						System.out.print(array[k]);
+						System.out.print(" \n ");
+					}
+				}
+			}
+		}
+	}
 	public static void main(String[] args) {
 		System.out.println("Welcome to Logical Function Program ");
 		
@@ -52,5 +68,9 @@ public class logFunc {
 		System.out.print("enter fourth number-");
 		double y2= sc.nextDouble();
 		distance(x1, x2, y1, y2);
+		
+		int array[] = {0, -1, 2, -3, 1};
+		int n = array.length;
+		findTriplets(array, n);
 	}
 }
