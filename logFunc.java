@@ -1,5 +1,13 @@
 package bridgelabz;
 import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.io.Writer;
+import java.util.Scanner;
 public class logFunc {
 	static void calculateRoots(int a, int b, int c ) {
 	int d =(b * b) - (4 * a * c);
@@ -91,5 +99,28 @@ public class logFunc {
 		System.out.print("Enter the wind speed in miles per hour:");
 		double v = sc.nextDouble();
 		windMills(v, t);
+		
+		int row, col, i, j;
+		int arr[][] = new int[10][10];
+
+		System.out.print("Enter row for the array (max 10) : ");
+		row = sc.nextInt();
+		System.out.print("Enter column for the array (max 10) : ");
+		col = sc.nextInt();
+		System.out.println("Enter " + (row * col) + " Array Elements : ");
+		try {
+		PrintWriter out = new PrintWriter(new File("outputPrintWriter.txt"));
+		for (i = 0; i < row; i++) {
+		for (j = 0; j < col; j++) {
+		arr[i][j] = sc.nextInt();
+		out.print(arr[i][j]);
+		}
+		}
+		out.close();
+		} 
+		catch (FileNotFoundException e1) {
+		e1.printStackTrace();
+		}
+		System.exit(0);
 	}
 }
