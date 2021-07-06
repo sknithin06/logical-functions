@@ -47,6 +47,19 @@ public class logFunc {
 			}
 		}
 	}
+	static void windMills(double v, double t ) {
+		if ( t <= 50) {
+			if ( v >= 3 || v <= 120) {	
+				double windChill = 35.74 + 0.6215 * t + (0.4275 * t - 35.75) * Math.pow(v, 0.16);
+				System.out.println("Given a temperature of "+t);  
+		        System.out.println("Given a speed of: "+v);  
+				System.out.println("The wind chill is "+windChill);
+			}
+		}
+		else {
+			System.out.println("invalid input");
+		}
+	}
 	public static void main(String[] args) {
 		System.out.println("Welcome to Logical Function Program ");
 		
@@ -72,5 +85,11 @@ public class logFunc {
 		int array[] = {0, -1, 2, -3, 1};
 		int n = array.length;
 		findTriplets(array, n);
+		
+		System.out.print("Enter the temperature in Fahrenheit :");
+		double t = sc.nextDouble();
+		System.out.print("Enter the wind speed in miles per hour:");
+		double v = sc.nextDouble();
+		windMills(v, t);
 	}
 }
